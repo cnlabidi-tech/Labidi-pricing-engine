@@ -6,6 +6,7 @@ This lab project implements a pricing engine that calculates the final price of 
 
 Inputs: Item prices, quantities, customer type (REGULAR/VIP), discount codes
 Outputs: Subtotal, discount amount, tax, and final price
+
 Project Structure
 pricing-engine/
 ├── app/                          # Application module
@@ -34,27 +35,34 @@ pricing-engine/
 ├── README.md
 ├── simple_integration_test.py    # Python integration tests (4 tests)
 └── .gitignore
+
 Technology Stack
 Language: Java 11+
 Build System: Gradle
 Testing: JUnit 5
 Version Control: Git
 Integration Testing: Python (pytest)
+
 Getting Started
+
 Prerequisites
 JDK 11 or higher
 Gradle (via gradlew)
 Python 3.8+ (for integration tests)
+
 Build the Project
 ./gradlew clean build
+
 Run Tests
 # Unit tests
 ./gradlew test
 
 # Integration tests (Python)
 python integration_test.py
+
 Run the Application
 ./gradlew run
+
 Refactoring & Design Patterns
 This project demonstrates progressive refactoring with clear separation of concerns:
 
@@ -63,20 +71,28 @@ Extracted CustomerType enum for customer type management
 Created DiscountCalculator for all discount logic
 Created TaxCalculator for tax calculations
 Refactored PricingEngine to orchestrate calculations
+
 Phase 2: Strategy Pattern
 Implemented DiscountStrategy interface for flexible discount calculations
 Created concrete strategies: PercentageDiscount, FixedDiscount, NoDiscount
 Introduced DiscountCode enum with built-in strategies
 Enables easy extension with new discount types
+
 Phase 3: Result Object
 Created PricingResult immutable class for detailed breakdowns
 Added calculateWithDetails() method to get complete pricing information
 Provides getDetailedBreakdown() for formatted output
 Better API design for client code
+
 Key Design Benefits
- Single Responsibility: Each class has one reason to change  Open/Closed: Easy to extend with new discount strategies  Dependency Inversion: Depends on abstractions (DiscountStrategy)  Testability: Each component can be tested independently  Maintainability: Clear, well-documented code structure
+ Single Responsibility: Each class has one reason to change  
+ Open/Closed: Easy to extend with new discount strategies  
+ Dependency Inversion: Depends on abstractions (DiscountStrategy)  
+ Testability: Each component can be tested independently  
+ Maintainability: Clear, well-documented code structure
 
 Testing
+
 Unit Tests (JUnit 5)
 14 comprehensive tests covering:
 
@@ -85,9 +101,10 @@ Multiple items with various discount codes
 Edge cases (zero prices, negative values, null inputs)
 Input validation and error handling
 Case-insensitive input handling
-Run tests:
 
+Run tests:
 ./gradlew test
+
 Integration Tests (Python)
 4 integration tests verifying:
 
@@ -95,9 +112,10 @@ Application runs successfully
 Final price is calculated correctly
 Expected values match calculations
 Output format is correct
-Run tests:
 
+Run tests:
 python simple_integration_test.py
+
 Example Usage
 PricingEngine engine = new PricingEngine();
 
@@ -122,6 +140,7 @@ System.out.println(result.getDetailedBreakdown());
 // Total Discount:    -$110.00
 // Tax (15%):         +$58.50
 // Final Price:       $448.50
+
 Lab Workflow
 This project demonstrates a complete software engineering workflow:
 
@@ -131,18 +150,21 @@ This project demonstrates a complete software engineering workflow:
  Code refactoring with clear commits (3 refactoring phases)
  Integration testing with Python (4 tests passing)
  Comprehensive documentation
+
 Git Commit History
 2143397 - Initial commit: Gradle project setup with tests
 d9e2ea6 - Refactor: Separate concerns (CustomerType, DiscountCalculator, TaxCalculator)
 4fdc0e8 - Refactor: Implement Strategy pattern for discounts
 c0b0d5b - Refactor: Add PricingResult class
 41bc6eb - Add: Python-based integration tests
+
 How to Contribute
 Create a feature branch: git checkout -b feature/your-feature
 Make your changes and test: ./gradlew test
 Commit with clear messages: git commit -m "Add feature: description"
 Push to GitHub: git push origin feature/your-feature
 Create a Pull Request
+
 License
 MIT License - See LICENSE file for details
 
