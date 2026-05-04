@@ -172,11 +172,11 @@ This project demonstrates progressive refactoring with clear separation of conce
 - Better API design for client code
 
 ## Key Design Benefits
-- ✅ Single Responsibility: Each class has one reason to change
-- ✅ Open/Closed: Easy to extend with new discount strategies
-- ✅ Dependency Inversion: Depends on abstractions (`DiscountStrategy`)
-- ✅ Testability: Each component can be tested independently
-- ✅ Maintainability: Clear, well-documented code structure
+-  Single Responsibility: Each class has one reason to change
+-  Open/Closed: Easy to extend with new discount strategies
+-  Dependency Inversion: Depends on abstractions (`DiscountStrategy`)
+-  Testability: Each component can be tested independently
+-  Maintainability: Clear, well-documented code structure
 
 ## Testing
 
@@ -237,12 +237,12 @@ System.out.println(result.getDetailedBreakdown());
 ## Lab Workflow
 This project demonstrates a complete software engineering workflow:
 
-- ✅ Gradle-based multi-project build (2 modules: app, list)
-- ✅ Unit testing with JUnit 5 (14 comprehensive tests)
-- ✅ Git/GitHub version control (5 commits with clear messages)
-- ✅ Code refactoring with clear commits (3 refactoring phases)
-- ✅ Integration testing with Python (4 tests passing)
-- ✅ Comprehensive documentation
+-  Gradle-based multi-project build (2 modules: app, list)
+-  Unit testing with JUnit 5 (14 comprehensive tests)
+-  Git/GitHub version control (5 commits with clear messages)
+-  Code refactoring with clear commits (3 refactoring phases)
+-  Integration testing with Python (4 tests passing)
+-  Comprehensive documentation
 
 ## Git Commit History
 - 2143397 - Initial commit: Gradle project setup with tests
